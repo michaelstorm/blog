@@ -1,0 +1,79 @@
+body {
+	margin: 0;
+	background-color: white;
+}
+
+.blog {
+}
+
+.header {
+	margin-bottom: 30px;
+	display: inline-block;
+	width: 15%;
+	height: 100%;
+	vertical-align: top;
+	font-family: "Lato", sans-serif;
+}
+
+.header--title {
+	font-size: 1.5em;
+	margin: 30px;
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.header--title:hover {
+	text-decoration: underline;
+}
+
+.header--links {
+	position: relative;
+	margin-left: 30px;
+}
+
+.header--link {
+	margin-bottom: 20px;
+	display: block;
+	transition: all .4s ease-in-ease-out;
+	color: #474973;
+	text-decoration-style: dashed;
+}
+
+.header--link:visited {
+	color: #8D99AE;
+}
+
+.entries {
+	padding: 80px 10% 0 10%;
+	display: inline-block;
+	width: 60%;
+	vertical-align: top;
+}
+
+.entry {
+}
+
+.entry--title {
+	font-size: 2.5em;
+	line-height: 120%;
+	font-family: "Lato", sans-serif;
+	margin-bottom: 30px;
+}
+
+.entry--hero {
+	display: block;
+	width: 100%;
+	box-shadow: 5px 5px 10px #CCC;
+}
+
+.entry--content {
+	font-size: 1.4em;
+	font-family: "Crimson Text", serif;
+	line-height: 140%;
+}
+
+.entry--content li:not(:first-child) {
+	padding-top: 10px;
+}
