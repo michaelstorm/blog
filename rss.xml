@@ -3,7 +3,7 @@
     <title>Michael Storm</title>
     <link>https://www.michaelstorm.io</link>
     <description />
-    <atom:link href="https://www.michaelstorm.io/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.michaelstorm.io/rss" rel="self" type="application/rss+xml" />
     <item>
       <guid isPermaLink="false">7132c365-660e-44bd-8267-79d427f92cbd</guid>
       <pubDate>Sun, 08 Apr 2018 21:09:29 -8000</pubDate>
