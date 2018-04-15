@@ -1,0 +1,18 @@
+<rss version="2.0">
+  <channel>
+    <item>
+      <guid isPermaLink="false">
+      http://www.blogger.com/feeds/12931054/posts/full/115714541264251287
+      </guid>
+      <pubDate>Fri, 01 Sep 2006 21:08:00 +0000</pubDate>
+      <title>Secure Ajax Requests</title>
+      <description>
+      <div xmlns="http://www.w3.org/1999/xhtml">My latest article for InformIT, titled <a href="http://www.informit.com">How to Secure Ajax Requests</a> is on the homepage this week. This article focuses on ensuring that your database-enabled Ajax requests are secure and not leaving your database open for an attack. Enjoy...</div>
+      </description>
+      <link>
+      http://www.krishadlock.com/blog/2006/09/secure-ajax-requests.html
+      </link>
+      <author>Kris Hadlock</author>
+    </item>
+  </channel>
+</rss>
