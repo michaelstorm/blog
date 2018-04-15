@@ -2,13 +2,11 @@
   <channel>
     <item>
       <guid isPermaLink="false">7132c365-660e-44bd-8267-79d427f92cbd</guid>
-      <pubDate>Sun, 07 Apr 2018 21:09:29 -8000</pubDate>
+      <pubDate>Sun, 08 Apr 2018 21:09:29 -8000</pubDate>
       <title>What if domain name auctions went both ways?</title>
       <description>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          Buying a domain name is a strange process. It's a piece of digital property, yet it's afflicted by the most
-          physical of problems...
-        </div>
+        Buying a domain name is a strange process. It's a piece of digital property, yet it's afflicted by the most
+        physical of problems...
       </description>
       <link>
         https://www.michaelstorm.io/domain-name-double-auctions
@@ -20,11 +18,9 @@
       <pubDate>Sat, 31 Mar 2018 17:53:21 -8000</pubDate>
       <title>Start with static analysis</title>
       <description>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          A talented engineer I interviewed the other day told me about a project she'd built as an intern: a network
-          traffic visualizer in D3. Which is pretty cool, and a perfect portfolio project for an intern. I asked why
-          she'd built it, and she said, "For security." The idea was to visualize traffic so that a human could spot...
-        </div>
+        A talented engineer I interviewed the other day told me about a project she'd built as an intern: a network
+        traffic visualizer in D3. Which is pretty cool, and a perfect portfolio project for an intern. I asked why
+        she'd built it, and she said, "For security." The idea was to visualize traffic so that a human could spot...
       </description>
       <link>
         https://www.michaelstorm.io/start-with-static-analysis
