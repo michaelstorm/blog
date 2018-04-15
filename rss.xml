@@ -1,18 +1,35 @@
 <rss version="2.0">
   <channel>
     <item>
-      <guid isPermaLink="false">
-      http://www.blogger.com/feeds/12931054/posts/full/115714541264251287
-      </guid>
-      <pubDate>Fri, 01 Sep 2006 21:08:00 +0000</pubDate>
-      <title>Secure Ajax Requests</title>
+      <guid isPermaLink="false">7132c365-660e-44bd-8267-79d427f92cbd</guid>
+      <pubDate>Sun, 07 Apr 2018 21:09:29 -8000</pubDate>
+      <title>What if domain name auctions went both ways?</title>
       <description>
-      <div xmlns="http://www.w3.org/1999/xhtml">My latest article for InformIT, titled <a href="http://www.informit.com">How to Secure Ajax Requests</a> is on the homepage this week. This article focuses on ensuring that your database-enabled Ajax requests are secure and not leaving your database open for an attack. Enjoy...</div>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          Buying a domain name is a strange process. It's a piece of digital property, yet it's afflicted by the most
+          physical of problems...
+        </div>
       </description>
       <link>
-      http://www.krishadlock.com/blog/2006/09/secure-ajax-requests.html
+        https://www.michaelstorm.io/domain-name-double-auctions
       </link>
-      <author>Kris Hadlock</author>
+      <author>Michael Storm</author>
+    </item>
+    <item>
+      <guid isPermaLink="false">e4a506ba-fc3c-48ca-87bb-a7d843f748ad</guid>
+      <pubDate>Sat, 31 Mar 2018 17:53:21 -8000</pubDate>
+      <title>Start with static analysis</title>
+      <description>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          A talented engineer I interviewed the other day told me about a project she'd built as an intern: a network
+          traffic visualizer in D3. Which is pretty cool, and a perfect portfolio project for an intern. I asked why
+          she'd built it, and she said, "For security." The idea was to visualize traffic so that a human could spot...
+        </div>
+      </description>
+      <link>
+        https://www.michaelstorm.io/start-with-static-analysis
+      </link>
+      <author>Michael Storm</author>
     </item>
   </channel>
 </rss>
