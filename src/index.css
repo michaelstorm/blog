@@ -1,79 +1,213 @@
 body {
-	margin: 0;
-	background-color: white;
-}
-
-.blog {
+    margin: 0;
+    background-color: white;
 }
 
 .header {
-	margin-bottom: 30px;
-	display: inline-block;
-	width: 15%;
-	height: 100%;
-	vertical-align: top;
-	font-family: "Lato", sans-serif;
+    width: calc(100% - 60px);
+    font-family: "Lato", sans-serif;
+    padding: 30px;
+    border-top: 4px solid #DB5461;
 }
 
 .header--title {
-	font-size: 1.5em;
-	margin: 30px;
-	display: inline-block;
-	color: black;
-	text-decoration: none;
-	font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #272727;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    padding-bottom: 3px;
 }
 
 .header--title:hover {
-	text-decoration: underline;
-}
-
-.header--links {
-	position: relative;
-	margin-left: 30px;
+    border-bottom: 1px solid black;
 }
 
 .header--link {
-	margin-bottom: 20px;
-	display: block;
-	transition: all .4s ease-in-ease-out;
-	color: #474973;
-	text-decoration-style: dashed;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 40px;
+    color: #272727;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    padding-bottom: 3px;
 }
 
-.header--link:visited {
-	color: #8D99AE;
+.header--link:hover:not(img) {
+    border-bottom: 1px solid black;
 }
 
-.entries {
-	padding: 80px 10% 0 10%;
-	display: inline-block;
-	width: 60%;
-	vertical-align: top;
+.header--link img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.header--link span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0;
+}
+
+.sidebar {
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    vertical-align: top;
+    font-family: "Lato", sans-serif;
+}
+
+.sidebar--title:hover {
+    text-decoration: underline;
+}
+
+.sidebar--links {
+    position: relative;
+    margin-left: 30px;
+}
+
+.sidebar--link {
+    margin-bottom: 20px;
+    display: block;
+    transition: all .4s ease-in-ease-out;
+    color: #474973;
+    text-decoration-style: dashed;
+}
+
+.sidebar--link:visited {
+    color: #8D99AE;
+}
+
+.entrywrapper {
+    text-align: center;
 }
 
 .entry {
+    padding: 60px 0;
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+    text-align: left;
 }
 
 .entry--title {
-	font-size: 2.5em;
-	line-height: 120%;
-	font-family: "Lato", sans-serif;
-	margin-bottom: 30px;
+    font-size: 2.5em;
+    line-height: 120%;
+    font-family: "Lato", sans-serif;
+    margin-bottom: 30px;
 }
 
 .entry--hero {
-	display: block;
-	width: 100%;
-	box-shadow: 5px 5px 10px #CCC;
+    display: block;
+    width: 100%;
+    margin: 40px 0;
+    box-shadow: 5px 5px 10px #CCC;
 }
 
 .entry--content {
-	font-size: 1.4em;
-	font-family: "Crimson Text", serif;
-	line-height: 140%;
+    font-size: 1.4em;
+    font-family: "Crimson Text", serif;
+    line-height: 140%;
 }
 
-.entry--content li:not(:first-child) {
-	padding-top: 10px;
+.entry--content--image {
+    width: 100%;
+}
+
+.entry--content--pre {
+    width: 100%;
+    overflow: scroll;
+}
+
+.entry--github-link {
+    text-decoration: none;
+}
+
+.entry--github-link:not(:first-child) {
+    margin-left: 6px;
+}
+
+.entry--github-link img {
+    display: inline-block;
+    height: .8em;
+}
+
+.entry--github-link span {
+    display: inline-block;
+}
+
+.side-by-side--choice {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+}
+
+.side-by-side--choice:nth-child(2) {
+    float: right;
+}
+
+.side-by-side--image-container {
+    height: 200px;
+    position: relative;
+}
+
+.side-by-side--image {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    box-shadow: 2px 2px 8px #CCC;
+}
+
+.side-by-side--caption {
+    font-size: .8em;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+}
+
+.footer {
+    font-family: "Lato", sans-serif;
+    color: #444;
+    font-size: .9em;
+    margin: 30px 0 20px 25%;
+}
+
+.footer a {
+    color: #444;
+}
+
+@media screen and (max-width: 800px) {
+    .entry {
+        width: 80%;
+    }
+
+    .entry--title {
+        font-size: 3em;
+    }
+
+    .entry--content {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .side-by-side--choice {
+        width: 100%;
+    }
+
+    .side-by-side--choice--caption {
+
+    }
 }

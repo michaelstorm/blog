@@ -2,22 +2,21 @@ import React, { Component } from 'react';
 
 export default class Header extends Component {
   render() {
-    const entries = this.props.entries;
-  	const links = Object.keys(entries).map(slug => (
-  		<a href={slug} className="header--link" key={slug}>
-  			{entries[slug].title}
-			</a>
-		));
-
     return (
-    	<div className="header">
-    		<a href="/" className="header--title">
-    			Michael Storm
-  			</a>
-    		<div className="header--links">
-    			{links}
-    		</div>
-    	</div>
+      <div className="header">
+        <a href="/" className="header--title">
+          Michael Storm
+        </a>
+        <a href="https://github.com/michaelstorm" className="header--link">
+          <img src="file:///home/michael/blog/src/images/GitHub-Mark-32px.png" className="header--link" /> <span>GitHub</span>
+        </a>
+        <a href="/resume" className="header--link">
+          Resume
+        </a>
+        <a href="/rss" className="header--link">
+          <img src="file:///home/michael/blog/src/images/feed-icon-28x28.png" className="header--link" /> <span>RSS</span>
+        </a>
+      </div>
     );
   }
 }
