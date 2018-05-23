@@ -7,13 +7,6 @@ export default class Entry extends Component {
       this.page.url = `https://${component.props.domain}/${component.props.entry.slug}`;
       this.page.identifier = component.props.entry.disqusIdentifier;
     };
-
-    (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://michael-storm.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
   }
 
   render() {
@@ -25,7 +18,6 @@ export default class Entry extends Component {
       			this.props.entry.hero ? <img className="entry--hero" src={this.props.entry.hero} /> : null
       		}
       		<div className="entry--content">{this.props.entry.content}</div>
-          <div id="disqus_thread"></div>
       	</div>
       </div>
     );

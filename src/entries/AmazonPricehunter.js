@@ -7,7 +7,7 @@ const entry = {
   disqusIdentifier: 'a953c91d-3cff-4af6-96de-d3849c8bf65e',
   content: (
     <div>
-      <h3>TL;DR</h3>
+      <h3>What is it?</h3>
 
       <p>
         <a href="https://github.com/michaelstorm/amazon-pricehunter" className="entry--github-link">
@@ -17,8 +17,8 @@ const entry = {
         market research, or whatever's in your heart.
       </p>
 
-      <p>
-        Teaser: if you can quickly and safely receive, store, and ship a lot of TVs, you might have a viable dropshipping
+      <p className="entry--note">
+        Spoiler: if you can quickly and safely receive, store, and ship a lot of TVs, you might have a viable dropshipping
         business model. I live in a three-story walkup in the Mission in San Francisco, so it's all yours.
       </p>
 
@@ -57,13 +57,14 @@ const entry = {
 
       <p>
         The Amazon market is remarkably similar to an electronic stock or commodities exchange. There are sellers making a range of offers
-        for (somewhat) standardized products, but those offers are aggregated in order to show buyers the "current" price.
-        A buyer who clicks "Buy It Now" doesn't care where it's coming from; they just care that they're getting the best price. As long
-        as it's delivered within the timeframe allowed by the exchange, you could get it off the back of a truck.
+        for standardized products, but those offers are aggregated in order to show buyers the "current" price.
+        That makes it easy for a buyer who clicks "Buy It Now" not to care where it's coming from; they just care that they're
+        getting the best price. As long as it's delivered within the timeframe allowed by the exchange, you could get it off the
+        back of a truck.
       </p>
 
       <p>
-        Some people perform this vital function by by running down to their local Target and buying all the soap dispensers, flipping them on Amazon,
+        Some people do the next-best thing by running down to their local Target and buying all the soap dispensers, flipping them on Amazon,
         and making a quick buck. I.e., "drop shipping". Or, to put it another way, "how a commodities market works". If your local cows
         are less expensive than the ones at the market, congratulations: you're about to sell a lot of cows.
       </p>
@@ -74,7 +75,7 @@ const entry = {
 
         <ol>
           <li>Find Amazon products listed elsewhere for less.</li>
-          <li>Offer those products on Amazon at a slight discount to the prevailing price, conveniently omitting their provenance.</li>
+          <li>Offer those products on Amazon at a slight discount to the prevailing price, without buying them ahead of time.</li>
           <li>Buy them from the third-party merchant whenever an Amazon order comes in.</li>
           <li>Ship them to myself and remove third-party markings.</li>
           <li>Re-ship them to the customer such that they arrive in an acceptable time window.</li>
@@ -82,7 +83,7 @@ const entry = {
         </ol>
 
         No inventory to buy or hold, no demand to predict. Just pure arbitrage, minus shipping and labor
-        costs. I would be the invisible hand of the market. Eventually, it could be automated: there are remailing services that
+        costs. Eventually, it could be automated: there are remailing services that
         will receive packages and re-ship them to an address of your choosing. Or TaskRabbits could handle it.
       </p>
 
@@ -104,7 +105,6 @@ const entry = {
 
       <p>
         Which is adorable, because you can just make a dozen Amazon Seller accounts and use them all in parallel from one IP address.
-        Of course, you would never do this.
       </p>
 
       <h3>Getting that sweet everyone-else data</h3>
@@ -112,7 +112,7 @@ const entry = {
       <p>
         For the second exchange, we could pick another single merchant, like Best Buy, Home Depot, etc. But crawling even an individual
         merchant is hard, and I didn't want to build a dozen adapters for the largest merchants just to find out eleven of them gave
-        bad results. Or we could be a little more opportunistic, and instead pick an aggregator of many
+        bad results. Another option is to be a little more opportunistic, and instead pick an aggregator of many
         merchants: <a href="https://datafeedr.github.io/datafeedr-api-docs/">Datafeedr</a>.
         Amusingly, using Datafeedr is a bit like the bond market. With
         bonds, traders literally call one another and ask what they'd sell a particular bond for. With Datafeedr, you get a price, other
@@ -131,19 +131,18 @@ const entry = {
       <p>
         The most interesting question of all is: how do you even find <i>all</i> of the products on Amazon? The API doesn't support a
         "give me everything" query and then you just paginate through millions of products; you have to specify
-        keywords, IDs, categories, etc. Hmm, the problem here is a bit hard to communicate. As a thought exercise: starting with knowledge of
-        exactly one
+        keywords, IDs, categories, etc. As a thought exercise: starting with knowledge of exactly one
         Amazon product, describe a strategy for enumerating all Amazon products in the minimum number of queries. It's important to
         keep query count low because prices become
         stale quickly, and you only have so many queries you can make before Amazon catches on. And the API has a hard limit of 100
         results per query.
       </p>
 
-      <p>
+      <p className="entry--note">
         For context: Amazon
         lists <a href="https://www.scrapehero.com/many-products-amazon-sell-january-2018/">~562 million products</a>. Getting the sales
-        rankings of those products would take at least 56.2 million queries. (Actually more, since products can be listed in more than
-        one category.) Getting the details of those products would be an additional 562 million * 2 = 1.1 billion queries. Assuming we
+        rankings of those products would take at least 56 million queries. (Actually more, since products can be listed in more than
+        one category.) Getting the details of those products would be an additional 562 million &times; 2 = 1.1 billion queries. Assuming we
         had a perfect crawling strategy, it would take ~1,300 crawlers to refresh every product every 24 hours. Which, honestly, may
         still be a blip on Amazon's radar. But in this case, it's still easier to have a smarter strategy than manage over a thousand bots.
       </p>
@@ -151,13 +150,10 @@ const entry = {
       <p>
         I originally thought I'd have to pick keywords out of product listings, but it turns out that browse nodes are
         incredibly convenient for this purpose. They're Amazon's name for product categories, and they form a directed acyclic
-        graph. (Like "Electronics" -> "Video Games" -> "Strategy".) So
-        Pricehunter starts with a top-level browse node like
-        "Electronics", queries the top-selling 100 items under that node, queries each of <i>their</i> browse nodes, and adds
-        them to the request queue. They're popped from the queue in priority order, where "priority" is "distance from the root node". So when
-        scrunched for time, we don't end up querying the top-selling tungsten egg beaters before the top-selling kitchen tools.
-        This metric seems to work fairly well as a proxy for overall sales, since we don't know how sales in one category compare
-        to another; we only get ranked items for each one.
+        graph. This gives us a way to discover products: start with a broad
+        category like "Electronics", list the top 100 items under it, get the browse nodes of those items, rinse, repeat. And we can
+        use the number of levels down a browse node is as a proxy for importance. That is, the top sellers of Electronics are likely
+        to beat the top sellers of Electronics -> Video Game Systems.
       </p>
 
       <h3>And crawling Datafeedr</h3>
@@ -167,7 +163,7 @@ const entry = {
         also out, because I don't want to sink too much capital into single items. We only consider items in new condition. Those
         items must have UPCs, EINs, or ISBNs. The price for those items from Datafeedr must be at least $15 less than the best
         Amazon price, and the Datafeedr merchant must be on the "non-skeezy" list that I created by hand. The Datafeedr price must
-        also be at least 60% of the Amazon price, as a sanity check.
+        also be no cheaper than 60% of the Amazon price, as a sanity check.
       </p>
 
       <p>
@@ -180,7 +176,7 @@ const entry = {
       <h3>Putting it all together</h3>
 
       <p>
-        After quite a bit of number crunching on the SQLite data, we have:
+        After quite a bit of number crunching on the SQLite data, here's a selection of the results:
       </p>
 
       <p className="entry--content--pre">
@@ -208,10 +204,16 @@ const entry = {
       </p>
 
       <p>
-        According to the above (and some other) rules, these are a selection of the most "interesting" products for sale when
+        According to the above (and some other) rules, these are some of the most "interesting" products for sale when
         I last ran this a few months ago. Not shown are the most common product categories: TVs and high-end cameras. The TVs I
         have no means to receive and re-ship, while the offers for cameras turned out to be ghosts. Therein lies the rub: you end
         up spending a lot of time verifying that Datafeedr listings are accurate. Even for well-known merchants, like Best Buy.
+      </p>
+
+      <p>
+        Every once in a while, though, you stumble across a product that's <i>really</i> enticing. Like the Nintendo Switch above.
+        I suspect that, with more effort and more start-up capital than I'm willing to commit, there's a side gig for someone in
+        here. If you're that someone, drop me a line. I'm excited to know that someone found a use for this.
       </p>
     </div>
   )
