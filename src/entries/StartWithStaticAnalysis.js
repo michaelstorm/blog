@@ -3,7 +3,6 @@ import React from 'react';
 const entry = {
   slug: 'start-with-static-analysis',
   title: "Start with static analysis",
-  disqusIdentifier: '7c8eb4d6-1b49-40dd-9978-b060c6a00f2d',
   content: (
     <div>
       <p>

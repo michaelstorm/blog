@@ -3,15 +3,14 @@ import React from 'react';
 const entry = {
   slug: 'amazon-pricehunter',
   title: "Amazon Pricehunter",
-  hero: "src/trading.jpg",
-  disqusIdentifier: 'a953c91d-3cff-4af6-96de-d3849c8bf65e',
+  hero: "src/images/trading.jpg",
   content: (
     <div>
       <h3>What is it?</h3>
 
       <p>
         <a href="https://github.com/michaelstorm/amazon-pricehunter" className="entry--github-link">
-          <img src="file:///home/michael/blog/src/images/GitHub-Mark-32px.png" /> <span>Amazon Pricehunter</span>
+          <img src="src/images/GitHub-Mark-32px.png" /> <span>Amazon Pricehunter</span>
         </a> is a "trading engine" that finds price differences between Amazon products and offers for those same products
         elsewere on the Internet. You can use it as the backend for a comparison shopping assistant, a dropshipping operation,
         market research, or whatever's in your heart.

@@ -3,8 +3,7 @@ import React from 'react';
 const entry = {
   slug: 'domain-name-double-auctions',
   title: "What if domain name auctions went both ways?",
-  hero: "src/domain_auction.png",
-  disqusIdentifier: 'a953c91d-3cff-4af6-96de-d3849c8bf65e',
+  hero: "src/images/domain_auction.png",
   content: (
     <div>
       <p>Buying a domain name is a strange process. It's a piece of digital property, yet it's afflicted by the most physical of problems:</p>
