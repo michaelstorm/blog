@@ -4,6 +4,7 @@ const entry = {
   slug: 'amazon-pricehunter',
   title: "Amazon Pricehunter",
   hero: "src/images/trading.jpg",
+  date: '5/28/2018',
   content: (
     <div>
       <h3>What is it?</h3>
@@ -104,6 +105,7 @@ const entry = {
 
       <p>
         Which is adorable, because you can just make a dozen Amazon Seller accounts and use them all in parallel from one IP address.
+        Of course, one would never do this.
       </p>
 
       <h3>Getting that sweet everyone-else data</h3>

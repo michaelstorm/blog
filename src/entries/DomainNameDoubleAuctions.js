@@ -4,6 +4,7 @@ const entry = {
   slug: 'domain-name-double-auctions',
   title: "What if domain name auctions went both ways?",
   hero: "src/images/domain_auction.png",
+  date: '3/14/2018',
   content: (
     <div>
       <p>Buying a domain name is a strange process. It's a piece of digital property, yet it's afflicted by the most physical of problems:</p>

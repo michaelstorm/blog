@@ -3,32 +3,24 @@ import Entry from './Entry.js';
 import Header from './Header.js';
 import Resume from './Resume.js';
 import Sidebar from './Sidebar.js';
-import AmazonPricehunter from './entries/AmazonPricehunter.js';
-import DomainNameDoubleAuctions from './entries/DomainNameDoubleAuctions.js';
-import StartWithStaticAnalysis from './entries/StartWithStaticAnalysis.js';
-
-const orderedEntries = [
-  AmazonPricehunter,
-  DomainNameDoubleAuctions,
-  StartWithStaticAnalysis
-];
-
-const entries = orderedEntries.reduce((obj, entry) => {
-  obj[entry.slug] = entry;
-  return obj;
-}, {});
+import Entries from './Entries.js';
+import { entries, orderedEntries } from './entriesData.js';
 
 const pages = {
-  'resume': <Resume />
+  'resume': <Resume />,
+  'entries': <Entries entries={orderedEntries} />
 }
 
 export default class Blog extends Component {
   render() {
-    const entry = window.selectedEntry ? entries[window.selectedEntry] : orderedEntries[0];
-    const renderedEntry = <Entry domain="www.michaelstorm.io" entry={entry} />;
-
-    const page = window.page ? pages[window.page] : null;
-    const content = page ? page : renderedEntry;
+    let content;
+    if (window.selectedEntry) {
+      const entry = entries[window.selectedEntry];
+      content = <Entry domain="www.michaelstorm.io" entry={entry} />;
+    }
+    else {
+      content = window.page ? pages[window.page] : null;
+    }
 
     return (
     	<div className="blog">

@@ -159,6 +159,42 @@ a {
     border: 1px dashed #777;
 }
 
+.entry--blurb {
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+    text-align: left;
+    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.entry--blurb:hover {
+    border-color: #E8E8E8;
+}
+
+.entry--blurb--title {
+    font-size: 1.5em;
+    line-height: 120%;
+    font-family: "Lato", sans-serif;
+}
+
+.entry--blurb--date {
+    font-size: 1.2em;
+    font-family: "Lato", sans-serif;
+    color: #AAA;
+    margin-top: 5px;
+}
+
+.entry--blurb--hero {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px #CCC;
+}
+
 .side-by-side--choice {
     display: inline-block;
     vertical-align: top;
@@ -197,28 +233,42 @@ a {
     font-family: "Lato", sans-serif;
     color: #444;
     font-size: .9em;
-    margin: 30px 0 20px 25%;
+    margin: 0 10% 30px 10%;
 }
 
 .footer a {
     color: #444;
 }
 
-@media screen and (max-width: 800px) {
+@media only screen and  (max-width: 800px) {
     .entry {
         width: 80%;
+        padding: 30px 0;
     }
 
     .entry--title {
-        font-size: 3em;
+        font-size: 2em;
     }
 
-    .entry--content {
-        font-size: 2em;
+    .entry--note {
+        margin-left: 0;
+    }
+
+    .header--title {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .header--link {
+        margin-right: 20px;
+    }
+
+    .entry--blurb {
+        width: 80%;
     }
 }
 
-@media screen and (max-width: 1600px) {
+@media only screen and (max-width: 1600px) {
     .side-by-side--choice {
         width: 100%;
         margin-bottom: 10px;

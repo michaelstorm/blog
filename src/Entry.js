@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
 export default class Entry extends Component {
-  componentDidMount() {
-    const component = this;
-    window.disqus_config = function () {
-      this.page.url = `https://${component.props.domain}/${component.props.entry.slug}`;
-      this.page.identifier = component.props.entry.disqusIdentifier;
-    };
-  }
-
   render() {
     return (
       <div className="entrywrapper">

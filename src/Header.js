@@ -7,11 +7,11 @@ export default class Header extends Component {
         <a href="/" className="header--title">
           Michael Storm
         </a>
+        <a href="/resume.pdf" className="header--link">
+          Resume
+        </a>
         <a href="https://github.com/michaelstorm" className="header--link">
           <img src="src/images/GitHub-Mark-32px.png" className="header--link" /> <span>GitHub</span>
-        </a>
-        <a href="/resume" className="header--link">
-          Resume
         </a>
         <a href="/rss" className="header--link">
           <img src="src/images/feed-icon-28x28.png" className="header--link" /> <span>RSS</span>
